@@ -16,8 +16,9 @@ public class StoreController {
     }
 
     @PostMapping("/store")
-    public void setStoredData(@RequestBody Map<String,String> incomingData) {
+    public Map<String,String> setStoredData(@RequestBody Map<String,String> incomingData) {
         this.storedData = incomingData.get("data");
+        return Map.of("status","OK");
     }
 
 }
